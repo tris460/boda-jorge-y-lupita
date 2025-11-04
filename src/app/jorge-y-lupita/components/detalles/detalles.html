@@ -1,17 +1,53 @@
 <section id="detalles" class="detalles">
+  <div class="decorative-bg">
+    <img src="j-y-l/helecho.png" alt="" class="leaf-right-2">
+    <img src="j-y-l/eucalipto.png" alt="" class="leaf-left">
+    <img src="j-y-l/helecho.png" alt="" class="leaf-right">
+    <img src="j-y-l/helecho.png" alt="" class="leaf-left-2">
+  </div>
+  
   <div class="container">
-    <h2>Detalles de la Boda</h2>
-    <div class="countdown">
-      <h3>Cuenta Regresiva</h3>
-      <div class="timer">Próximamente...</div>
-    </div>
-    <div class="fecha">
-      <h3>Fecha</h3>
-      <p>Por definir</p>
-    </div>
-    <div class="cancion">
+    <div class="song-section-top">
       <h3>Nuestra Canción</h3>
-      <p>Por definir</p>
+      <p class="song-info">Por definir</p>
+    </div>
+    
+    <div class="section-header">
+      <h2>Detalles de Nuestra Boda</h2>
+      <div class="ornament">❦</div>
+    </div>
+    
+    <div class="details-content">
+      <div class="date-section">
+        <h3>Fecha</h3>
+        <p class="date">23 de Mayo, 2026</p>
+        <p class="time">7:30 PM</p>
+      </div>
+      
+      <div class="countdown-section">
+        <h3>Faltan</h3>
+        <div class="timer">
+          <div class="time-group">
+            <span class="number">{{ days }}</span>
+            <span class="label">días</span>
+          </div>
+          <span class="separator">:</span>
+          <div class="time-group">
+            <span class="number">{{ hours }}</span>
+            <span class="label">horas</span>
+          </div>
+          <span class="separator">:</span>
+          <div class="time-group">
+            <span class="number">{{ minutes }}</span>
+            <span class="label">minutos</span>
+          </div>
+          <span class="separator">:</span>
+          <div class="time-group">
+            <span class="number">{{ seconds }}</span>
+            <span class="label">segundos</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
