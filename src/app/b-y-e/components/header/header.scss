@@ -178,13 +178,19 @@
   position: absolute;
 }
 
-@media (min-width: 813px) {
+@media (min-width: 1169px) {
   .menu-toggle {
     display: none;
   }
   
   .overlay {
     display: none;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
   }
   
   .nav {
@@ -201,7 +207,6 @@
     z-index: auto;
     max-height: none;
     overflow: visible;
-    flex-wrap: wrap;
   }
   
   .nav a {
@@ -238,24 +243,15 @@
   }
 }
 
-@media (min-width: 972px) {
-  .header {
-    display: flex;
-  }
-
+@media (min-width: 1200px) {
   .nav {
-    gap: 5px;
+    gap: 15px;
     flex-wrap: nowrap;
-    margin-left: 20px;
   }
   
   .nav a {
     font-size: 0.9rem;
     padding: 5px 10px;
-  }
-
-  .logo {
-    display: flex;
   }
 }
 
