@@ -24,6 +24,24 @@ body {
   
   --font-title: "Dancing Script", cursive;
   --font-text: "Raleway", sans-serif;
+  
+  // Variables de colores para Jorge y Lupita
+  --jl-verde-muy-claro: #d6e0d3;
+  --jl-verde-claro: #798c73;
+  --jl-verde-oscuro: #465741;
+  --jl-blanco: #fff;
+  --jl-negro: #000;
+  --jl-gris-claro: #d8dbd7;
+  --jl-gris-oscuro: #767875;
+}
+
+// Aplicar fuentes globalmente
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+}
+
+body, p, span, div, button, a {
+  font-family: var(--font-text);
 }
 
 section {

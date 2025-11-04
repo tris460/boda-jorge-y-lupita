@@ -1,0 +1,22 @@
+.inicio {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(70, 87, 65, 0.4), rgba(70, 87, 65, 0.4)), url('/placeholder-wedding.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--jl-blanco);
+  text-align: center;
+  
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--jl-blanco);
+  }
+  
+  p {
+    font-size: 1.5rem;
+    color: var(--jl-verde-muy-claro);
+  }
+}

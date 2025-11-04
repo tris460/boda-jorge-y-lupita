@@ -1,0 +1,30 @@
+.detalles {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: var(--jl-verde-muy-claro);
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--jl-verde-oscuro);
+  }
+  
+  .countdown, .fecha, .cancion {
+    margin-bottom: 2rem;
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--jl-verde-claro);
+    }
+    
+    p {
+      color: var(--jl-gris-oscuro);
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.confirmar-asistencia {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: var(--jl-verde-claro);
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--jl-blanco);
+  }
+  
+  p {
+    color: var(--jl-verde-muy-claro);
+  }
+}
