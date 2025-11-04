@@ -1,20 +1,598 @@
 .itinerario {
-  padding: 80px 20px;
-  text-align: center;
-  background-color: var(--jl-blanco);
+  padding: 120px 20px;
+  background: linear-gradient(135deg, var(--jl-verde-muy-claro) 0%, var(--jl-blanco) 100%);
+  position: relative;
+  overflow: hidden;
+  
+  .decorative-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    
+    .branch-top {
+      position: absolute;
+      top: 5%;
+      right: 10%;
+      width: 120px;
+      opacity: 0.25;
+      transform: rotate(15deg);
+    }
+    
+    .leaf-left {
+      position: absolute;
+      top: 20%;
+      left: 3%;
+      width: 60px;
+      opacity: 0.22;
+      transform: rotate(-20deg);
+    }
+    
+    .flowers-right {
+      position: absolute;
+      top: 75%;
+      right: 12%;
+      width: 100px;
+      opacity: 0.2;
+    }
+    
+    .branch-bottom {
+      position: absolute;
+      bottom: 8%;
+      left: 8%;
+      width: 100px;
+      opacity: 0.23;
+      transform: rotate(-45deg);
+    }
+    
+    .eucalipto-left {
+      position: absolute;
+      top: 40%;
+      left: -20px;
+      width: 140px;
+      opacity: 0.18;
+      transform: rotate(-25deg);
+    }
+    
+    .helecho-right {
+      position: absolute;
+      top: 55%;
+      right: -30px;
+      width: 160px;
+      opacity: 0.19;
+      transform: rotate(30deg);
+    }
+    
+    .leaf-top-right {
+      position: absolute;
+      top: 12%;
+      right: 35%;
+      width: 50px;
+      opacity: 0.2;
+      transform: rotate(60deg);
+    }
+    
+    .leaf-bottom-left {
+      position: absolute;
+      bottom: 25%;
+      left: 25%;
+      width: 45px;
+      opacity: 0.21;
+      transform: rotate(-40deg);
+    }
+    
+    .leaves-center {
+      position: absolute;
+      top: 85%;
+      left: 60%;
+      width: 120px;
+      opacity: 0.17;
+      transform: rotate(25deg);
+    }
+    
+    .flower-scattered-1 {
+      position: absolute;
+      top: 30%;
+      right: 45%;
+      width: 80px;
+      opacity: 0.16;
+      transform: rotate(-20deg);
+    }
+    
+    .flower-scattered-2 {
+      position: absolute;
+      bottom: 45%;
+      left: 35%;
+      width: 70px;
+      opacity: 0.18;
+      transform: rotate(45deg);
+    }
+    
+    .eucalipto-right {
+      position: absolute;
+      top: 65%;
+      right: -15px;
+      width: 130px;
+      opacity: 0.17;
+      transform: rotate(15deg);
+    }
+    
+    .helecho-left {
+      position: absolute;
+      bottom: 60%;
+      left: -40px;
+      width: 150px;
+      opacity: 0.16;
+      transform: rotate(-35deg);
+    }
+    
+    .branch-center {
+      position: absolute;
+      top: 50%;
+      right: 25%;
+      width: 90px;
+      opacity: 0.15;
+      transform: rotate(75deg);
+    }
+    
+    .leaf-extra-1 {
+      position: absolute;
+      top: 15%;
+      left: 10%;
+      width: 35px;
+      opacity: 0.09;
+      transform: rotate(120deg);
+    }
+    
+    .leaf-extra-2 {
+      position: absolute;
+      top: 80%;
+      right: 15%;
+      width: 40px;
+      opacity: 0.08;
+      transform: rotate(-60deg);
+    }
+    
+    .leaf-extra-3 {
+      position: absolute;
+      top: 40%;
+      left: 5%;
+      width: 38px;
+      opacity: 0.07;
+      transform: rotate(90deg);
+    }
+    
+    .flowers-extra-1 {
+      position: absolute;
+      top: 20%;
+      left: 70%;
+      width: 60px;
+      opacity: 0.06;
+      transform: rotate(-45deg);
+    }
+    
+    .flowers-extra-2 {
+      position: absolute;
+      bottom: 20%;
+      right: 25%;
+      width: 65px;
+      opacity: 0.07;
+      transform: rotate(30deg);
+    }
+    
+    .leaves-extra-1 {
+      position: absolute;
+      top: 30%;
+      right: 5%;
+      width: 100px;
+      opacity: 0.05;
+      transform: rotate(-15deg);
+    }
+    
+    .leaves-extra-2 {
+      position: absolute;
+      bottom: 50%;
+      left: 30%;
+      width: 110px;
+      opacity: 0.06;
+      transform: rotate(60deg);
+    }
+    
+    .flower-extra-1 {
+      position: absolute;
+      top: 10%;
+      left: 40%;
+      width: 60px;
+      opacity: 0.05;
+      transform: rotate(135deg);
+    }
+    
+    .flower-extra-2 {
+      position: absolute;
+      bottom: 15%;
+      right: 40%;
+      width: 55px;
+      opacity: 0.06;
+      transform: rotate(-75deg);
+    }
+    
+    .flower-extra-3 {
+      position: absolute;
+      top: 65%;
+      right: 10%;
+      width: 65px;
+      opacity: 0.07;
+      transform: rotate(105deg);
+    }
+    
+    .eucalipto-extra-1 {
+      position: absolute;
+      top: 5%;
+      left: 60%;
+      width: 120px;
+      opacity: 0.04;
+      transform: rotate(45deg);
+    }
+    
+    .eucalipto-extra-2 {
+      position: absolute;
+      bottom: 5%;
+      right: 60%;
+      width: 110px;
+      opacity: 0.05;
+      transform: rotate(-30deg);
+    }
+    
+    .helecho-extra-1 {
+      position: absolute;
+      top: 25%;
+      right: 2%;
+      width: 140px;
+      opacity: 0.04;
+      transform: rotate(60deg);
+    }
+    
+    .helecho-extra-2 {
+      position: absolute;
+      bottom: 25%;
+      left: 2%;
+      width: 135px;
+      opacity: 0.05;
+      transform: rotate(-45deg);
+    }
+    
+    .helecho-extra-3 {
+      position: absolute;
+      top: 75%;
+      left: 75%;
+      width: 125px;
+      opacity: 0.04;
+      transform: rotate(20deg);
+    }
+    
+    .branch-extra-1 {
+      position: absolute;
+      top: 35%;
+      left: 80%;
+      width: 80px;
+      opacity: 0.04;
+      transform: rotate(-60deg);
+    }
+    
+    .branch-extra-2 {
+      position: absolute;
+      bottom: 35%;
+      right: 80%;
+      width: 85px;
+      opacity: 0.05;
+      transform: rotate(150deg);
+    }
+    
+    .branch-extra-3 {
+      position: absolute;
+      top: 55%;
+      left: 25%;
+      width: 75px;
+      opacity: 0.04;
+      transform: rotate(-120deg);
+    }
+    
+    .leaf-micro-1 {
+      position: absolute;
+      top: 18%;
+      left: 75%;
+      width: 25px;
+      opacity: 0.16;
+      transform: rotate(180deg);
+    }
+    
+    .leaf-micro-2 {
+      position: absolute;
+      top: 35%;
+      right: 8%;
+      width: 28px;
+      opacity: 0.15;
+      transform: rotate(-90deg);
+    }
+    
+    .leaf-micro-3 {
+      position: absolute;
+      bottom: 18%;
+      left: 15%;
+      width: 30px;
+      opacity: 0.16;
+      transform: rotate(45deg);
+    }
+    
+    .leaf-micro-4 {
+      position: absolute;
+      top: 80%;
+      left: 80%;
+      width: 26px;
+      opacity: 0.15;
+      transform: rotate(-135deg);
+    }
+    
+    .leaf-micro-5 {
+      position: absolute;
+      top: 90%;
+      left: 40%;
+      width: 32px;
+      opacity: 0.14;
+      transform: rotate(270deg);
+    }
+    
+    .leaves-micro-1 {
+      position: absolute;
+      top: 18%;
+      right: 45%;
+      width: 90px;
+      opacity: 0.04;
+      transform: rotate(75deg);
+    }
+    
+    .leaves-micro-2 {
+      position: absolute;
+      bottom: 18%;
+      left: 45%;
+      width: 95px;
+      opacity: 0.05;
+      transform: rotate(-105deg);
+    }
+    
+    .leaves-micro-3 {
+      position: absolute;
+      top: 42%;
+      left: 85%;
+      width: 85px;
+      opacity: 0.04;
+      transform: rotate(165deg);
+    }
+    
+    .flower-micro-1 {
+      position: absolute;
+      top: 8%;
+      left: 25%;
+      width: 45px;
+      opacity: 0.04;
+      transform: rotate(-165deg);
+    }
+    
+    .flower-micro-2 {
+      position: absolute;
+      bottom: 8%;
+      right: 35%;
+      width: 50px;
+      opacity: 0.05;
+      transform: rotate(195deg);
+    }
+    
+    .flower-micro-3 {
+      position: absolute;
+      top: 28%;
+      left: 3%;
+      width: 48px;
+      opacity: 0.04;
+      transform: rotate(-225deg);
+    }
+    
+    .flower-micro-4 {
+      position: absolute;
+      bottom: 28%;
+      right: 8%;
+      width: 52px;
+      opacity: 0.05;
+      transform: rotate(255deg);
+    }
+  }
   
   .container {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
   
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--jl-verde-oscuro);
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    
+    h2 {
+      font-size: 3.5rem;
+      color: var(--jl-verde-oscuro);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
+    
+    .ornament {
+      font-size: 2rem;
+      color: var(--jl-verde-claro);
+      opacity: 0.7;
+    }
   }
   
-  p {
-    color: var(--jl-gris-oscuro);
+  .timeline {
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--jl-verde-claro), var(--jl-verde-oscuro));
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s ease;
+      
+      &.animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      
+      &:nth-child(even) {
+        transform: translateX(50px);
+        
+        &.animate {
+          transform: translateX(0);
+        }
+        
+        .timeline-card {
+          margin-left: 80px;
+        }
+        
+        .timeline-marker {
+          left: 30px;
+        }
+      }
+      
+      &:nth-child(odd) {
+        .timeline-card {
+          margin-right: 80px;
+          margin-left: 80px;
+        }
+        
+        .timeline-marker {
+          left: 30px;
+        }
+      }
+      
+      .timeline-marker {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: var(--jl-verde-claro);
+        border: 4px solid var(--jl-blanco);
+        border-radius: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+        z-index: 2;
+        box-shadow: 0 0 0 4px var(--jl-verde-muy-claro);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: var(--jl-verde-oscuro);
+          transform: translateX(-50%) scale(1.2);
+        }
+      }
+      
+      .timeline-card {
+        background: var(--jl-blanco);
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(70, 87, 65, 0.15);
+        border: 1px solid rgba(121, 140, 115, 0.1);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(70, 87, 65, 0.25);
+        }
+        
+        .card-icon {
+          position: absolute;
+          top: -10px;
+          right: 15px;
+          width: 50px;
+          height: 50px;
+          background: var(--jl-blanco);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 12px rgba(70, 87, 65, 0.2);
+          
+          .icon {
+            font-size: 24px;
+            opacity: 0.8;
+          }
+        }
+        
+        .card-time {
+          display: inline-block;
+          background: linear-gradient(135deg, var(--jl-verde-claro), var(--jl-verde-oscuro));
+          color: var(--jl-blanco);
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          margin-bottom: 1rem;
+        }
+        
+        h3 {
+          font-size: 1.5rem;
+          color: var(--jl-verde-oscuro);
+          margin-bottom: 0.5rem;
+          font-weight: 400;
+        }
+        
+        p {
+          color: var(--jl-gris-oscuro);
+          font-size: 1rem;
+          line-height: 1.5;
+          margin: 0;
+        }
+      }
+    }
+  }
+  
+
+  
+  @media (max-width: 768px) {
+    padding: 80px 15px;
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+    }
+    
+    .timeline {
+      &::before {
+        left: 20px;
+      }
+      
+      .timeline-item {
+        &:nth-child(even),
+        &:nth-child(odd) {
+          .timeline-card {
+            margin-left: 60px;
+            margin-right: 0;
+          }
+          
+          .timeline-marker {
+            left: 20px;
+          }
+        }
+      }
+    }
   }
 }
