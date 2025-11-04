@@ -1,20 +1,122 @@
 .ubicacion {
-  padding: 80px 20px;
-  text-align: center;
-  background-color: var(--jl-blanco);
+  padding: 120px 20px;
+  background: linear-gradient(135deg, var(--jl-blanco) 0%, rgba(216, 219, 215, 0.3) 100%);
+  position: relative;
   
   .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
   }
   
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--jl-verde-oscuro);
+  .section-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    
+    h2 {
+      font-size: 3.5rem;
+      color: var(--jl-verde-oscuro);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
+    
+    .ornament {
+      font-size: 2rem;
+      color: var(--jl-verde-claro);
+      opacity: 0.7;
+    }
   }
   
-  p {
-    color: var(--jl-gris-oscuro);
+  .location-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    
+    .venue-info {
+      text-align: center;
+      
+      h3 {
+        font-size: 2rem;
+        color: var(--jl-verde-claro);
+        margin-bottom: 1rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+      
+      p {
+        font-size: 1.2rem;
+        color: var(--jl-gris-oscuro);
+        font-weight: 300;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+    }
+    
+    .map-container {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 30px);
+        height: calc(100% + 30px);
+        background: linear-gradient(135deg, var(--jl-verde-muy-claro), var(--jl-verde-claro));
+        border-radius: 20px;
+        z-index: -1;
+        opacity: 0.3;
+      }
+      
+      iframe {
+        width: 100%;
+        max-width: 700px;
+        height: 450px;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(70, 87, 65, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 45px rgba(70, 87, 65, 0.3);
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 80px 15px;
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+    }
+    
+    .location-content {
+      gap: 2rem;
+      
+      .venue-info {
+        h3 {
+          font-size: 1.6rem;
+        }
+        
+        p {
+          font-size: 1.1rem;
+        }
+      }
+      
+      .map-container iframe {
+        height: 350px;
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .map-container iframe {
+      height: 300px;
+    }
   }
 }
