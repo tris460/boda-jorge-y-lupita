@@ -8,4 +8,47 @@
     max-width: 800px;
     margin: 0 auto;
   }
+  
+  .developer-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--jl-verde-claro);
+    
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+      
+      a {
+        color: var(--jl-verde-muy-claro);
+        transition: color 0.3s ease, transform 0.3s ease;
+        
+        &:hover {
+          color: var(--jl-blanco);
+          transform: scale(1.2);
+        }
+        
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+  
+  .footer-image {
+    text-align: center;
+    margin-top: 20px;
+    
+    img {
+      max-width: 140px;
+      height: auto;
+    }
+  }
 }
