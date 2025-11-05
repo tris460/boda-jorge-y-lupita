@@ -16,6 +16,7 @@ git checkout gh-pages
 ```bash
 git rm -rf .
 cp -r dist/wedding-b-y-e/* .
+cp browser/index.html .
 ```
 
 ### 4. Commit y push
