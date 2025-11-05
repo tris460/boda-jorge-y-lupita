@@ -1,43 +1,34 @@
 # Deploy a GitHub Pages
 
-## Pasos para desplegar el proyecto
+## Comandos completos para copiar y pegar
 
-### 1. Desde main: instalar dependencias y generar build
 ```bash
+# 1. Desde main: instalar dependencias y generar build
 npm install
 ng build --configuration=github-pages
-```
 
-### 2. Cambiar a rama gh-pages
-```bash
-git checkout gh-pages
-```
-
-### 3. Copiar archivos a directorio temporal
-```bash
+# 2. Copiar archivos a directorio temporal
 cp -r dist/wedding-b-y-e /tmp/gh-pages-build
-```
 
-### 4. Limpiar y copiar archivos del build
-```bash
+# 3. Cambiar a rama gh-pages
+git checkout gh-pages
+
+# 4. Limpiar y copiar archivos del build
 git rm -rf .
 cp -r /tmp/gh-pages-build/* .
 mv browser/* .
 rmdir browser
-cp 404.html jorge-y-lupita.html
+
+# 5. Crear directorio para rutas directas
 mkdir -p jorge-y-lupita
 cp index.html jorge-y-lupita/index.html
-```
 
-### 5. Commit y push
-```bash
+# 6. Commit y push
 git add .
 git commit -m "Update GitHub Pages deployment"
 git push origin gh-pages
-```
 
-### 6. Regresar a main
-```bash
+# 7. Regresar a main
 git checkout main
 ```
 
