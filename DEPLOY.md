@@ -22,7 +22,8 @@ cp -r dist/wedding-b-y-e /tmp/gh-pages-build
 ```bash
 git rm -rf .
 cp -r /tmp/gh-pages-build/* .
-cp browser/index.html .
+mv browser/* .
+rmdir browser
 ```
 
 ### 5. Commit y push
