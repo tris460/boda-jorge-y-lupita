@@ -2,8 +2,9 @@
 
 ## Pasos para desplegar el proyecto
 
-### 1. Generar build de producción
+### 1. Instalar dependencias y generar build
 ```bash
+npm install
 ng build --configuration=github-pages
 ```
 
