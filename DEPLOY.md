@@ -19,6 +19,9 @@ cp -r /tmp/gh-pages-build/* .
 mv browser/* .
 rmdir browser
 
+# 4.1 Corregir baseHref si es necesario
+sed -i '' 's|/wedding-b-y-e/|/wedding/|g' index.html
+
 # 5. Crear directorio para rutas directas
 mkdir -p jorge-y-lupita
 cp index.html jorge-y-lupita/index.html
