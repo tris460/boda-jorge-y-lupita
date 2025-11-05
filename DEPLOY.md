@@ -22,6 +22,8 @@ rmdir browser
 # 5. Crear directorio para rutas directas
 mkdir -p jorge-y-lupita
 cp index.html jorge-y-lupita/index.html
+mkdir -p bety-y-erick
+cp index.html bety-y-erick/index.html
 
 # 6. Commit y push
 git add .
@@ -40,7 +42,12 @@ git checkout main
 5. Folder: / (root)
 
 ## URL del sitio
-Tu sitio estará disponible en: `https://tu-usuario.github.io/wedding-b-y-e/`
+Tu sitio estará disponible en: `https://tris460.github.io/wedding/`
+
+## URLs directas
+- Home: `https://tris460.github.io/wedding/`
+- Jorge y Lupita: `https://tris460.github.io/wedding/jorge-y-lupita`
+- Bety y Erick: `https://tris460.github.io/wedding/bety-y-erick`
 
 ## Actualizaciones futuras
 Para actualizar el sitio, repite los pasos 1-6 desde la rama main.

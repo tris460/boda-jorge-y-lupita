@@ -55,7 +55,7 @@
               "sourceMap": true
             },
             "github-pages": {
-              "baseHref": "/wedding-b-y-e/",
+              "baseHref": "/wedding/",
               "budgets": [
                 {
                   "type": "initial",
