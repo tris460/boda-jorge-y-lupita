@@ -24,6 +24,9 @@ git rm -rf .
 cp -r /tmp/gh-pages-build/* .
 mv browser/* .
 rmdir browser
+cp 404.html jorge-y-lupita.html
+mkdir -p jorge-y-lupita
+cp index.html jorge-y-lupita/index.html
 ```
 
 ### 5. Commit y push
