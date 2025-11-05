@@ -1,6 +1,11 @@
 .itinerario {
   padding: 120px 20px;
-  background: linear-gradient(135deg, var(--jl-verde-muy-claro) 0%, var(--jl-blanco) 100%);
+  background: 
+    linear-gradient(rgba(214, 224, 211, 0.7), rgba(214, 224, 211, 0.8)),
+    url('/j-y-l/pergamino.avif'),
+    linear-gradient(135deg, var(--jl-verde-muy-claro), var(--jl-verde-claro));
+  background-size: cover;
+  background-position: center;
   position: relative;
   overflow: hidden;
   

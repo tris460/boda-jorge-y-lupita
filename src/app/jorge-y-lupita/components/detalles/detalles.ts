@@ -24,7 +24,7 @@ export class Detalles implements OnInit, OnDestroy {
   }
 
   private startCountdown() {
-    const weddingDate = new Date('2026-05-23T19:30:00').getTime();
+    const weddingDate = new Date('2026-06-06T19:30:00').getTime();
     
     this.interval = setInterval(() => {
       const now = new Date().getTime();

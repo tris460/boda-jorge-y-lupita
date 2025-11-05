@@ -1,7 +1,12 @@
 .confirmar-asistencia {
   padding: 80px 20px;
   text-align: center;
-  background-color: var(--jl-verde-claro);
+  background: 
+    linear-gradient(rgba(121, 140, 115, 0.4), rgba(214, 224, 211, 0.5)),
+    url('/j-y-l/pergamino.avif'),
+    linear-gradient(135deg, var(--jl-verde-claro), var(--jl-verde-oscuro));
+  background-size: cover;
+  background-position: center;
   
   .container {
     max-width: 800px;

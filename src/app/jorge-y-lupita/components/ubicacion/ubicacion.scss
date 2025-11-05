@@ -1,6 +1,11 @@
 .ubicacion {
   padding: 120px 20px;
-  background: linear-gradient(135deg, var(--jl-blanco) 0%, rgba(216, 219, 215, 0.3) 100%);
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(248, 248, 248, 0.7)),
+    url('/j-y-l/pergamino.avif'),
+    linear-gradient(135deg, var(--jl-blanco), var(--jl-gris-claro));
+  background-size: cover;
+  background-position: center;
   position: relative;
   
   .container {
@@ -28,63 +33,85 @@
   }
   
   .location-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    
-    .venue-info {
-      text-align: center;
+    .locations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
       
-      h3 {
-        font-size: 2rem;
-        color: var(--jl-verde-claro);
-        margin-bottom: 1rem;
-        font-weight: 300;
-        letter-spacing: 1px;
-      }
-      
-      p {
-        font-size: 1.2rem;
-        color: var(--jl-gris-oscuro);
-        font-weight: 300;
-        max-width: 600px;
-        margin: 0 auto;
-        line-height: 1.6;
-      }
-    }
-    
-    .map-container {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      
-      &::before {
-        content: '';
-        position: absolute;
-        top: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% + 30px);
-        height: calc(100% + 30px);
-        background: linear-gradient(135deg, var(--jl-verde-muy-claro), var(--jl-verde-claro));
-        border-radius: 20px;
-        z-index: -1;
-        opacity: 0.3;
-      }
-      
-      iframe {
-        width: 100%;
-        max-width: 700px;
-        height: 450px;
-        border-radius: 15px;
-        box-shadow: 0 15px 35px rgba(70, 87, 65, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      .location-item {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
         
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 20px 45px rgba(70, 87, 65, 0.3);
+        .venue-info {
+          text-align: center;
+          
+          h3 {
+            font-size: 1.8rem;
+            color: var(--jl-verde-oscuro);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+          }
+          
+          h4 {
+            font-size: 1.4rem;
+            color: var(--jl-verde-claro);
+            margin-bottom: 1rem;
+            font-weight: 300;
+          }
+          
+          p {
+            font-size: 1.1rem;
+            color: var(--jl-gris-oscuro);
+            font-weight: 300;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+          }
+        }
+        
+        .map-container {
+          display: flex;
+          justify-content: center;
+          position: relative;
+          
+          &::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% + 30px);
+            height: calc(100% + 30px);
+            background: linear-gradient(135deg, var(--jl-verde-muy-claro), var(--jl-verde-claro));
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.3;
+          }
+          
+          iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(70, 87, 65, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            &:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 20px 45px rgba(70, 87, 65, 0.3);
+            }
+          }
         }
       }
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .locations-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
     }
   }
   
@@ -95,27 +122,33 @@
       font-size: 2.5rem;
     }
     
-    .location-content {
-      gap: 2rem;
+    .locations-grid {
+      gap: 3rem;
       
-      .venue-info {
-        h3 {
-          font-size: 1.6rem;
+      .location-item {
+        .venue-info {
+          h3 {
+            font-size: 1.5rem;
+          }
+          
+          h4 {
+            font-size: 1.2rem;
+          }
+          
+          p {
+            font-size: 1rem;
+          }
         }
         
-        p {
-          font-size: 1.1rem;
+        .map-container iframe {
+          height: 350px;
         }
-      }
-      
-      .map-container iframe {
-        height: 350px;
       }
     }
   }
   
   @media (max-width: 480px) {
-    .map-container iframe {
+    .location-item .map-container iframe {
       height: 300px;
     }
   }
