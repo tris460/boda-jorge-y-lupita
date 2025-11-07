@@ -1,6 +1,11 @@
 .footer {
-  background-color: var(--jl-verde-oscuro);
-  color: var(--jl-blanco);
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(248, 248, 248, 0.7)),
+    url('/j-y-l/papel.avif'),
+    linear-gradient(135deg, var(--jl-blanco), var(--jl-gris-claro));
+  background-size: cover;
+  background-position: center;
+  color: var(--jl-negro);
   padding: 40px 20px;
   text-align: center;
   
@@ -12,7 +17,7 @@
   .developer-info {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid var(--jl-verde-claro);
+    border-top: 1px solid var(--jl-verde-oscuro);
     
     p {
       font-size: 0.9rem;
@@ -26,11 +31,11 @@
       margin-top: 10px;
       
       a {
-        color: var(--jl-verde-muy-claro);
+        color: var(--jl-verde-claro);
         transition: color 0.3s ease, transform 0.3s ease;
         
         &:hover {
-          color: var(--jl-blanco);
+          color: var(--jl-verde-oscuro);
           transform: scale(1.2);
         }
         
