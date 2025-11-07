@@ -231,6 +231,36 @@
       grid-template-columns: 1fr;
       gap: 2rem;
     }
+    
+    .dress-code-section .dress-code-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+  
+  .dress-code-section {
+    margin: 2rem 0;
+    
+    .dress-code-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      
+      .dress-code-item {
+        text-align: center;
+        
+        .dress-code-text {
+          font-size: 1.1rem;
+          color: var(--jl-verde-oscuro);
+          font-weight: 400;
+          line-height: 1.4;
+          letter-spacing: 0.5px;
+          margin: 0;
+        }
+      }
+    }
   }
   
   .wedding-image {
