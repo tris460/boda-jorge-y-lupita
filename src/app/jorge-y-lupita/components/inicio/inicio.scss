@@ -1,8 +1,5 @@
 .inicio {
-  // height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 2rem 1rem;
   background: 
     linear-gradient(rgba(255, 255, 255, 0.6), rgba(248, 248, 248, 0.7)),
     url('/j-y-l/papel.avif'),
@@ -11,6 +8,12 @@
   background-position: center;
   color: var(--jl-negro);
   text-align: center;
+  
+  .hero-image {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
   
   .intro-text {
     font-family: 'Dancing Script', cursive;
@@ -110,8 +113,14 @@
     
     img {
       height: 80vh;
+      max-width: 100%;
       object-fit: contain;
       opacity: 0.8;
+    }
+    
+    .salon-image {
+      max-width: 100%;
+      height: 50vh;
     }
   }
   
@@ -212,6 +221,12 @@
   }
   
   @media (max-width: 768px) {
+    padding: 1.5rem 0.75rem;
+    
+    h1 {
+      font-size: 3rem;
+    }
+    
     .parents-names .parents-section {
       flex-direction: column;
       gap: 2rem;
@@ -235,6 +250,59 @@
     .dress-code-section .dress-code-grid {
       grid-template-columns: 1fr;
       gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1rem 0.5rem;
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    .full-names {
+      .bride-name, .groom-name {
+        font-size: 1.1rem;
+        word-break: break-word;
+      }
+    }
+    
+    .parents-names {
+      .parent-name {
+        font-size: 0.9rem;
+        word-break: break-word;
+      }
+    }
+    
+    .location-section {
+      .location-name {
+        font-size: 1rem;
+        word-break: break-word;
+      }
+      
+      .map-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+    
+    .date-section {
+      .date {
+        font-size: 2rem;
+      }
+      
+      .time {
+        font-size: 1.3rem;
+      }
+    }
+    
+    .venue-image img {
+      height: 50vh;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      margin: 1rem 0.5rem;
     }
   }
   
