@@ -22,9 +22,9 @@ body {
   --color-black: #000000;
   --color-gray: #F8F8F8;
   
-  --font-title: "Dancing Script", cursive;
-  --font-text: "Raleway", sans-serif;
-  --font-text-jl: "Cormorant Garamond", serif;
+  --font-title: "Allura", cursive;
+  --font-text: "Cormorant", serif;
+  --font-text-jl: "Cormorant", serif;
   
   // Variables de colores para Jorge y Lupita
   --jl-verde-muy-claro: #d6e0d3;
@@ -54,4 +54,16 @@ body, p, span, div, button, a {
 
 section {
   scroll-margin-top: 100px;
+}
+// Clases específicas para las fuentes
+.allura-regular {
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cormorant {
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
