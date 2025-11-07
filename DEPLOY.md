@@ -3,7 +3,9 @@
 ## Comandos completos para copiar y pegar
 
 ```bash
-# 1. Desde main: instalar dependencias y generar build
+# 1. Desde main: limpiar y generar build
+rm -rf dist/
+rm -rf .angular/cache/
 npm install
 ng build --configuration=github-pages
 
@@ -13,27 +15,34 @@ cp -r dist/wedding-b-y-e /tmp/gh-pages-build
 # 3. Cambiar a rama gh-pages
 git checkout gh-pages
 
-# 4. Limpiar y copiar archivos del build
+# 4. Limpiar completamente la rama gh-pages
 git rm -rf .
+
+# 5. Copiar archivos del build
 cp -r /tmp/gh-pages-build/* .
 mv browser/* .
 rmdir browser
 
-# 4.1 Corregir baseHref si es necesario
+# 6. Corregir baseHref si es necesario
 sed -i '' 's|/wedding-b-y-e/|/wedding/|g' index.html
 
-# 5. Crear directorio para rutas directas
+# 7. Crear directorios para rutas directas
 mkdir -p jorge-y-lupita
 cp index.html jorge-y-lupita/index.html
+cp *.css jorge-y-lupita/ 2>/dev/null || true
+cp *.js jorge-y-lupita/ 2>/dev/null || true
+
 mkdir -p bety-y-erick
 cp index.html bety-y-erick/index.html
+cp *.css bety-y-erick/ 2>/dev/null || true
+cp *.js bety-y-erick/ 2>/dev/null || true
 
-# 6. Commit y push
+# 8. Commit y push
 git add .
 git commit -m "Update GitHub Pages deployment"
 git push origin gh-pages
 
-# 7. Regresar a main
+# 9. Regresar a main
 git checkout main
 ```
 
@@ -53,4 +62,9 @@ Tu sitio estará disponible en: `https://tris460.github.io/wedding/`
 - Bety y Erick: `https://tris460.github.io/wedding/bety-y-erick`
 
 ## Actualizaciones futuras
-Para actualizar el sitio, repite los pasos 1-6 desde la rama main.
+Para actualizar el sitio, repite los pasos 1-9 desde la rama main.
+
+## Notas importantes
+- Los archivos CSS/JS se copian a los subdirectorios para evitar errores 404
+- El comando `2>/dev/null || true` evita errores si no hay archivos CSS/JS
+- Siempre ejecuta desde la rama main
