@@ -24,6 +24,7 @@ body {
   
   --font-title: "Dancing Script", cursive;
   --font-text: "Raleway", sans-serif;
+  --font-text-jl: "Cormorant Garamond", serif;
   
   // Variables de colores para Jorge y Lupita
   --jl-verde-muy-claro: #d6e0d3;
@@ -42,6 +43,13 @@ h1, h2, h3, h4, h5, h6 {
 
 body, p, span, div, button, a {
   font-family: var(--font-text);
+}
+
+// Fuente específica para Jorge y Lupita
+.jorge-y-lupita {
+  body, p, span, div, button, a, h4, h5, h6 {
+    font-family: var(--font-text-jl) !important;
+  }
 }
 
 section {
