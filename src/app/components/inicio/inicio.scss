@@ -1,3 +1,22 @@
+.bg {
+  width: 100vw;
+  display: flex;
+  position: absolute;
+  top: 5px;
+  left: 0px;
+}
+
+.bg-1 {
+  width: 50%;
+  height: 50%;
+}
+
+.bg-2 {
+  width: 50%;
+  height: 50%;
+  transform: rotateY(180deg);
+}
+
 .inicio {
   padding: 2rem 1rem;
   background: 
@@ -13,6 +32,25 @@
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+
+    .main-phrase {
+      margin-bottom: 50px;
+      margin-top: 180px;
+      font-size: 20px;
+      max-width: 75%;
+    }
+  }
+
+  @media (max-width: 603px) { 
+    .main-phrase {
+      margin-top: 130px !important;
+    }
+  }
+
+  @media (max-width: 480px) { 
+    .main-phrase {
+      margin: 120px auto 10px !important;
+    }
   }
   
   .intro-text {
@@ -217,6 +255,28 @@
           }
         }
       }
+    }
+  }
+
+  .map-button {
+    background: transparent;
+    color: var(--jl-verde-claro);
+    border: 2px solid var(--jl-verde-claro);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    
+    &:hover {
+      background: var(--jl-verde-claro);
+      color: var(--jl-blanco);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(70, 87, 65, 0.3);
     }
   }
   
