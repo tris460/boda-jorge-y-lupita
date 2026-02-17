@@ -407,4 +407,54 @@
       -webkit-mask-composite: source-in;
     }
   }
+  
+  .gift-registry-section {
+    margin: 3rem 0;
+    
+    .gift-registry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      
+      .gift-registry-item {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem;
+        border: 1px solid var(--jl-verde-oscuro);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.5);
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .registry-logo {
+          width: 200px;
+          height: 120px;
+          object-fit: contain;
+          border-radius: 8px;
+          transition: transform 0.3s ease;
+          
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .gift-registry-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+  }
 }
