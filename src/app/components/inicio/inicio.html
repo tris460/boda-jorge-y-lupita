@@ -113,5 +113,104 @@
       </div>
     </div>
 
+    <hr style="margin: 3rem 0;">
+
+    <!-- Confirmación de Asistencia -->
+    <div class="confirmation-section">
+      <h1 style="font-size: 45px; margin-bottom: 1rem;">Confirmación de Asistencia</h1>
+      
+      @if (!showConfirmation) {
+        <form class="confirmation-form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Nombre *</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name"
+              [(ngModel)]="formData.name"
+              [class.invalid]="isNameInvalid()"
+              placeholder="Ingresa tu nombre completo"
+            />
+            @if (isNameInvalid()) {
+              <span class="error-message">El nombre es requerido</span>
+            }
+          </div>
+
+          <div class="form-group">
+            <label>¿Confirmas tu asistencia? *</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input 
+                  type="radio" 
+                  name="attending" 
+                  value="true"
+                  [(ngModel)]="formData.attending"
+                />
+                <span>Sí, asistiré</span>
+              </label>
+              <label class="radio-label">
+                <input 
+                  type="radio" 
+                  name="attending" 
+                  value="false"
+                  [(ngModel)]="formData.attending"
+                />
+                <span>No podré asistir</span>
+              </label>
+            </div>
+            @if (isAttendingInvalid()) {
+              <span class="error-message">Por favor selecciona una opción</span>
+            }
+          </div>
+
+          @if (formData.attending === 'true') {
+            <div class="form-group">
+              <label for="guests">Número de invitados</label>
+              <input 
+                type="number" 
+                id="guests" 
+                name="guests"
+                [(ngModel)]="formData.guests"
+                min="1"
+                max="10"
+                placeholder="¿Cuántas personas asistirán?"
+              />
+            </div>
+          }
+
+          <div class="form-group">
+            <label for="message">Mensaje (opcional)</label>
+            <textarea 
+              id="message" 
+              name="message"
+              [(ngModel)]="formData.message"
+              rows="4"
+              placeholder="Déjanos un mensaje..."
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="submit-button"
+            [disabled]="isLoading"
+          >
+            @if (isLoading) {
+              <span class="spinner"></span>
+              <span>Enviando...</span>
+            } @else {
+              <span>Confirmar Asistencia</span>
+            }
+          </button>
+        </form>
+      } @else {
+        <div class="confirmation-message">
+          <div class="success-icon">✓</div>
+          <h2>¡Gracias por confirmar!</h2>
+          <p>Hemos recibido tu confirmación correctamente.</p>
+          <button class="map-button" (click)="resetForm()">Enviar otra confirmación</button>
+        </div>
+      }
+    </div>
+
   </div>
 </section>
