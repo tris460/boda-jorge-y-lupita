@@ -2,16 +2,21 @@
   width: 100vw;
   display: flex;
   position: fixed;
-  top: 5px;
+  top: 0px;
   left: 0px;
   z-index: 1000;
   pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 0) 40%);
+  padding-bottom: 10px;
 }
 
 .bg-bottom {
   top: auto;
-  bottom: 5px;
+  bottom: 0px;
   transform: rotate(180deg);
+  padding-bottom: 0;
+  padding-top: 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 0) 40%);
 }
 
 .bg-1 {
