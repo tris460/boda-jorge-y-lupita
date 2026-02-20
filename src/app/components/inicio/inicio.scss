@@ -1,7 +1,7 @@
 .bg {
   width: 100vw;
   display: flex;
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
   z-index: 1000;
@@ -11,8 +11,8 @@
 }
 
 .bg-bottom {
-  top: auto;
-  bottom: 0px;
+  position: relative;
+  top: -200px;
   transform: rotate(180deg);
   padding-bottom: 0;
   padding-top: 10px;
@@ -30,8 +30,34 @@
   transform: rotateY(180deg);
 }
 
+.content-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.lateral-border {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  background-image: url('/j-y-l/margin-lateral.png');
+  background-repeat: repeat-y;
+  background-size: contain;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.lateral-left {
+  left: 0;
+}
+
+.lateral-right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
 .inicio {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 0 1rem;
   background: 
     linear-gradient(rgba(255, 255, 255, 0.6), rgba(248, 248, 248, 0.7)),
     url('/j-y-l/papel.avif'),
@@ -45,6 +71,7 @@
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+    padding: 0 70px;
 
     .main-phrase {
       margin-bottom: 50px;
