@@ -40,7 +40,7 @@
   top: 0;
   bottom: 0;
   width: 50px;
-  background-image: url('./j-y-l/margin-lateral.png');
+  background-image: url('/assets/margin-lateral.png');
   background-repeat: repeat-y;
   background-size: contain;
   z-index: 999;
@@ -60,7 +60,7 @@
   padding: 2rem 1rem 0 1rem;
   background: 
     linear-gradient(rgba(255, 255, 255, 0.6), rgba(248, 248, 248, 0.7)),
-    url('./j-y-l/papel.avif'),
+    url('/assets/papel.avif'),
     linear-gradient(135deg, var(--jl-blanco), var(--jl-gris-claro));
   background-size: cover;
   background-position: center;
