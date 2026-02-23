@@ -71,7 +71,7 @@
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 70px;
+    padding: 0 55px;
 
     .main-phrase {
       margin-bottom: 50px;
@@ -496,6 +496,22 @@
         gap: 2.5rem;
       }
     }
+    
+    @media (max-width: 400px) {
+      .gift-registry-grid {
+        gap: 2rem;
+        
+        .gift-registry-item {
+          padding: 1rem;
+          gap: 1rem;
+          
+          .registry-logo {
+            width: 150px;
+            height: 90px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -684,6 +700,8 @@
     }
 
     @media (max-width: 768px) {
+      padding: 0;
+      
       .confirmation-form {
         padding: 1.5rem;
       }
@@ -699,6 +717,25 @@
 
         h2 {
           font-size: 2rem;
+        }
+      }
+    }
+    
+    @media (max-width: 480px) {
+      padding: 0;
+      
+      .confirmation-form {
+        padding: 1rem;
+        
+        .form-group {
+          margin-bottom: 1.2rem;
+          
+          input[type="text"],
+          input[type="number"],
+          textarea {
+            padding: 0.7rem;
+            font-size: 0.95rem;
+          }
         }
       }
     }

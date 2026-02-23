@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,9 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './inicio.html',
   styleUrl: './inicio.scss'
 })
-export class Inicio implements OnInit, OnDestroy {
+export class Inicio implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('backgroundMusic') audioPlayer!: ElementRef<HTMLAudioElement>;
+  
   days = 0;
   hours = 0;
   minutes = 0;
@@ -26,6 +28,26 @@ export class Inicio implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.startCountdown();
+  }
+
+  ngAfterViewInit() {
+    // Intentar reproducir el audio automáticamente
+    if (this.audioPlayer) {
+      const audio = this.audioPlayer.nativeElement;
+      audio.volume = 0.3; // Volumen al 30%
+      
+      // Intentar reproducir
+      const playPromise = audio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Si falla el autoplay, agregar un listener para reproducir con la primera interacción
+          document.addEventListener('click', () => {
+            audio.play().catch(() => {});
+          }, { once: true });
+        });
+      }
+    }
   }
 
   ngOnDestroy() {
