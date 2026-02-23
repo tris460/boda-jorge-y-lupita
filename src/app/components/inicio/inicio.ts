@@ -41,10 +41,18 @@ export class Inicio implements OnInit, OnDestroy, AfterViewInit {
       
       if (playPromise !== undefined) {
         playPromise.catch(() => {
-          // Si falla el autoplay, agregar un listener para reproducir con la primera interacción
-          document.addEventListener('click', () => {
+          // Si falla el autoplay, agregar listeners para reproducir con la primera interacción
+          const playOnInteraction = () => {
             audio.play().catch(() => {});
-          }, { once: true });
+            // Remover los listeners después de reproducir
+            document.removeEventListener('click', playOnInteraction);
+            document.removeEventListener('scroll', playOnInteraction);
+            document.removeEventListener('touchstart', playOnInteraction);
+          };
+          
+          document.addEventListener('click', playOnInteraction, { once: true });
+          document.addEventListener('scroll', playOnInteraction, { once: true });
+          document.addEventListener('touchstart', playOnInteraction, { once: true });
         });
       }
     }
