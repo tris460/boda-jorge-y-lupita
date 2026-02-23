@@ -66,6 +66,76 @@
   background-position: center;
   color: var(--jl-negro);
   text-align: center;
+  position: relative;
+  
+  .music-control-section {
+    margin: 2rem auto;
+    text-align: center;
+    
+    .music-control-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      padding: 1rem 2rem;
+      background: var(--jl-verde-claro);
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-size: 1rem;
+      font-family: 'Cormorant', serif;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      
+      &:hover {
+        background: var(--jl-verde-oscuro);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      }
+      
+      &:active {
+        transform: translateY(0);
+      }
+      
+      &.playing {
+        animation: pulse 2s infinite;
+      }
+      
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+      
+      span {
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+      box-shadow: 0 4px 20px rgba(107, 142, 101, 0.6);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .music-control-section {
+      .music-control-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+        
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
   
   .hero-image {
     max-width: 1200px;

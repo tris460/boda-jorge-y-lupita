@@ -2,6 +2,7 @@
   <audio #backgroundMusic autoplay loop>
     <source src="GreatFairyFountain.mp3" type="audio/mpeg">
   </audio>
+  
   <div class="bg">
     <img src="j-y-l/bg.png" class="bg-1">
     <img src="j-y-l/bg.png" class="bg-2">
@@ -25,6 +26,25 @@
       <p class="date">6 de Junio, 2026</p>
       <p class="time">5:00 PM</p>
     </div>
+
+    <!-- Botón de control de música -->
+    @if (showMusicButton) {
+      <div class="music-control-section">
+        <button class="music-control-button" (click)="toggleMusic()" [class.playing]="isPlaying">
+          @if (isPlaying) {
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+            </svg>
+            <span>Pausar Música</span>
+          } @else {
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <span>Reproducir Música</span>
+          }
+        </button>
+      </div>
+    }
 
     <!-- Lugar -->
     <div class="location-section">

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit, NgZone } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,10 @@ export class Inicio implements OnInit, OnDestroy, AfterViewInit {
   minutes = 0;
   seconds = 0;
   private interval: any;
+  isPlaying = false;
+  showMusicButton = false;
+
+  constructor(private ngZone: NgZone) {}
 
   formData = {
     name: '',
@@ -33,51 +37,55 @@ export class Inicio implements OnInit, OnDestroy, AfterViewInit {
   ngAfterViewInit() {
     console.log('ngAfterViewInit - Iniciando configuración de audio');
     
-    // Intentar reproducir el audio automáticamente
+    // Ejecutar fuera de la zona de Angular
+    this.ngZone.runOutsideAngular(() => {
+      if (this.audioPlayer) {
+        const audio = this.audioPlayer.nativeElement;
+        audio.volume = 0.3;
+        
+        console.log('Audio element encontrado:', audio);
+        
+        // Intentar reproducir automáticamente
+        const playPromise = audio.play();
+        
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log('✅ Audio reproduciéndose automáticamente');
+              this.ngZone.run(() => {
+                this.isPlaying = true;
+                this.showMusicButton = true;
+              });
+            })
+            .catch(() => {
+              console.log('❌ Autoplay bloqueado - Mostrando botón de play');
+              this.ngZone.run(() => {
+                this.showMusicButton = true;
+              });
+            });
+        }
+      }
+    });
+  }
+
+  toggleMusic() {
     if (this.audioPlayer) {
       const audio = this.audioPlayer.nativeElement;
-      audio.volume = 0.3; // Volumen al 30%
       
-      console.log('Audio element encontrado:', audio);
-      console.log('Audio src:', audio.src);
-      
-      // Intentar reproducir
-      const playPromise = audio.play();
-      
-      if (playPromise !== undefined) {
-        playPromise
+      if (this.isPlaying) {
+        audio.pause();
+        this.isPlaying = false;
+        console.log('⏸️ Música pausada');
+      } else {
+        audio.play()
           .then(() => {
-            console.log('✅ Audio reproduciéndose automáticamente');
+            this.isPlaying = true;
+            console.log('▶️ Música reproduciéndose');
           })
           .catch((error) => {
-            console.log('❌ Autoplay bloqueado:', error.message);
-            console.log('Esperando interacción del usuario...');
-            
-            // Si falla el autoplay, agregar listeners para reproducir con la primera interacción
-            const playOnInteraction = (event: Event) => {
-              console.log('🎵 Intentando reproducir audio por interacción:', event.type);
-              audio.play()
-                .then(() => {
-                  console.log('✅ Audio reproduciéndose después de interacción');
-                })
-                .catch((err) => {
-                  console.error('❌ Error al reproducir audio:', err.message);
-                });
-            };
-            
-            // Eventos de interacción válidos para reproducir audio
-            document.addEventListener('click', playOnInteraction, { once: true });
-            document.addEventListener('touchstart', playOnInteraction, { once: true });
-            document.addEventListener('touchmove', playOnInteraction, { once: true });
-            document.addEventListener('wheel', playOnInteraction, { once: true, passive: true });
-            document.addEventListener('keydown', playOnInteraction, { once: true });
-            document.addEventListener('mousedown', playOnInteraction, { once: true });
-            
-            console.log('Listeners agregados para: click, touchstart, touchmove, wheel, keydown, mousedown');
+            console.error('❌ Error al reproducir:', error);
           });
       }
-    } else {
-      console.error('❌ No se encontró el elemento de audio');
     }
   }
 
