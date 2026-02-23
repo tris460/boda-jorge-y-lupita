@@ -31,30 +31,53 @@ export class Inicio implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    console.log('ngAfterViewInit - Iniciando configuración de audio');
+    
     // Intentar reproducir el audio automáticamente
     if (this.audioPlayer) {
       const audio = this.audioPlayer.nativeElement;
       audio.volume = 0.3; // Volumen al 30%
       
+      console.log('Audio element encontrado:', audio);
+      console.log('Audio src:', audio.src);
+      
       // Intentar reproducir
       const playPromise = audio.play();
       
       if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Si falla el autoplay, agregar listeners para reproducir con la primera interacción
-          const playOnInteraction = () => {
-            audio.play().catch(() => {});
-            // Remover los listeners después de reproducir
-            document.removeEventListener('click', playOnInteraction);
-            document.removeEventListener('scroll', playOnInteraction);
-            document.removeEventListener('touchstart', playOnInteraction);
-          };
-          
-          document.addEventListener('click', playOnInteraction, { once: true });
-          document.addEventListener('scroll', playOnInteraction, { once: true });
-          document.addEventListener('touchstart', playOnInteraction, { once: true });
-        });
+        playPromise
+          .then(() => {
+            console.log('✅ Audio reproduciéndose automáticamente');
+          })
+          .catch((error) => {
+            console.log('❌ Autoplay bloqueado:', error.message);
+            console.log('Esperando interacción del usuario...');
+            
+            // Si falla el autoplay, agregar listeners para reproducir con la primera interacción
+            const playOnInteraction = (event: Event) => {
+              console.log('🎵 Intentando reproducir audio por interacción:', event.type);
+              audio.play()
+                .then(() => {
+                  console.log('✅ Audio reproduciéndose después de interacción');
+                })
+                .catch((err) => {
+                  console.error('❌ Error al reproducir audio:', err.message);
+                });
+            };
+            
+            // Eventos de interacción válidos para reproducir audio
+            document.addEventListener('click', playOnInteraction, { once: true });
+            document.addEventListener('touchstart', playOnInteraction, { once: true });
+            document.addEventListener('touchmove', playOnInteraction, { once: true });
+            document.addEventListener('wheel', playOnInteraction, { once: true, passive: true });
+            document.addEventListener('keydown', playOnInteraction, { once: true });
+            document.addEventListener('mousedown', playOnInteraction, { once: true });
+            
+            console.log('Listeners agregados para: click, touchstart, touchmove, wheel, keydown, mousedown');
+          });
       }
+    } else {
+      console.error('❌ No se encontró el elemento de audio');
     }
   }
 
